@@ -1,43 +1,33 @@
-
-.columns {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
 .columns > div {
-  flex: 1 1 0%;
-  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.columns h4 {
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-family: var(--heading-font-family);
+.columns img {
+  width: 100%;
 }
 
-.columns ul {
-  list-style-type: none;
-  padding: 0;
+.columns > div > div {
+  order: 1;
 }
 
-.columns li {
-  margin-bottom: 10px;
+.columns > div > .columns-img-col {
+  order: 0;
 }
 
-.columns a {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 2px solid var(--link-color);
-  border-radius: 20px;
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: bold;
-  font-family: var(--body-font-family);
-  transition: background-color 0.3s, color 0.3s;
+.columns > div > .columns-img-col img {
+  display: block;
 }
 
-.columns a:hover {
-  background-color: var(--link-color);
-  color: white;
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 32px;
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
 }
